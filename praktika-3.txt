@@ -1,15 +1,15 @@
 1) ip
 
-Запрос
+Р—Р°РїСЂРѕСЃ
 open httpbin.org 80
-GET ip HTTP1.1                  *Запрос ip
+GET ip HTTP1.1                  *Р—Р°РїСЂРѕСЃ ip
 Host httpbin.org
 Accept 
 
-Ответ
-HTTP1.1 200 OK                  *Код состояния 200 означает, что запрос успешный
-Connection keep-alive           *Поддерживает соединение
-Server gunicorn19.9.0           *Информация о сервере
+РћС‚РІРµС‚
+HTTP1.1 200 OK                  *РљРѕРґ СЃРѕСЃС‚РѕСЏРЅРёСЏ 200 РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ Р·Р°РїСЂРѕСЃ СѓСЃРїРµС€РЅС‹Р№
+Connection keep-alive           *РџРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃРѕРµРґРёРЅРµРЅРёРµ
+Server gunicorn19.9.0           *РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃРµСЂРІРµСЂРµ
 Date Thu, 29 Nov 2018 10:58:09 GMT
 Content-Type applicationjson
 Content-Length 31 
@@ -18,21 +18,21 @@ Access-Control-Allow-Credentials true
 Via 1.1 vegur
 
 {
-   origin 212.193.78.231        *В ответе  мой ip адрес
+   origin 212.193.78.231        *Р’ РѕС‚РІРµС‚Рµ  РјРѕР№ ip Р°РґСЂРµСЃ
                            }
 
 2) get 
 
-Запрос
+Р—Р°РїСЂРѕСЃ
 open httpbin.org 80
-GET getfoo=bar&1=2&20&error=True HTTP1.1       *Запрос ресурса get c параметрами foo=bar и 1=2, и 20, и error=True по протоколу HTTP версии 1.1
+GET getfoo=bar&1=2&20&error=True HTTP1.1       *Р—Р°РїСЂРѕСЃ СЂРµСЃСѓСЂСЃР° get c РїР°СЂР°РјРµС‚СЂР°РјРё foo=bar Рё 1=2, Рё 20, Рё error=True РїРѕ РїСЂРѕС‚РѕРєРѕР»Сѓ HTTP РІРµСЂСЃРёРё 1.1
 Host httpbin.org
 Accept 
 
-Ответ
-HTTP1.1 200 OK                                 *Код состояния 200 означает, что запрос успешный
-Connection keep-alive 			       *Поддерживает соединение
-Server gunicorn19.9.0                          *Информация о сервере
+РћС‚РІРµС‚
+HTTP1.1 200 OK                                 *РљРѕРґ СЃРѕСЃС‚РѕСЏРЅРёСЏ 200 РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ Р·Р°РїСЂРѕСЃ СѓСЃРїРµС€РЅС‹Р№
+Connection keep-alive 			                 *РџРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃРѕРµРґРёРЅРµРЅРёРµ
+Server gunicorn19.9.0                          *РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃРµСЂРІРµСЂРµ
 Date Thu, 29 Nov 2018 11:04:17 GMT
 Content-Type applicationjson
 Content-Length 281
@@ -41,37 +41,37 @@ Access-Control-Allow-Credentials true
 Via 1.1 vegur
 
 {
-   args {                                      *Переданные параметры
+   args {                                      *РџРµСЂРµРґР°РЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
              1 2,
              20 ,
              error True,
              foo bar
             },
-   headers {                                   *Заголовки
+   headers {                                   *Р—Р°РіРѕР»РѕРІРєРё
               Accept ,
               Connection close,
               Host httpbin.org
             },
    origin 212.193.78.231,        
-   url httphttpbin.orggetfoo=bar&1=2&2%2F0&error=True  *Адрес запрошенного ресурса
+   url httphttpbin.orggetfoo=bar&1=2&2%2F0&error=True  *РђРґСЂРµСЃ Р·Р°РїСЂРѕС€РµРЅРЅРѕРіРѕ СЂРµСЃСѓСЂСЃР°
 }
 
 3) post
 
-Запрос
+Р—Р°РїСЂРѕСЃ
 open httpbin.org 80
-POST post HTTP1.1                             *Отправить POST запрос ресурсу post по протоколу HTTP1.1
+POST post HTTP1.1                             *РћС‚РїСЂР°РІРёС‚СЊ POST Р·Р°РїСЂРѕСЃ СЂРµСЃСѓСЂСЃСѓ post РїРѕ РїСЂРѕС‚РѕРєРѕР»Сѓ HTTP1.1
 Host httpbin.org
 Accept 
 Content-Length 35
 Content-Type applicationx-www-form-urlencoded
 
-foo=bar&1=2&2%2F0=&error=True                 *Параметры запроса
+foo=bar&1=2&2%2F0=&error=True                 *РџР°СЂР°РјРµС‚СЂС‹ Р·Р°РїСЂРѕСЃР°
 
-Ответ на запрос
-HTTP1.1 200 OK                                *Код состояния 200 означает, что запрос успешный
-Connection keep-alive                         *Поддерживает соединение
-Servergunicorn19.9.0                          *Информация о сервере
+РћС‚РІРµС‚ РЅР° Р·Р°РїСЂРѕСЃ
+HTTP1.1 200 OK                                *РљРѕРґ СЃРѕСЃС‚РѕСЏРЅРёСЏ 200 РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ Р·Р°РїСЂРѕСЃ СѓСЃРїРµС€РЅС‹Р№
+Connection keep-alive                         *РџРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃРѕРµРґРёРЅРµРЅРёРµ
+Servergunicorn19.9.0                          *РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃРµСЂРІРµСЂРµ
 Date Thu, 29 Nov 2018 11:12:06 GMT
 Content-Type applicationjson             
 Access-Control-Allow-Origin 
@@ -82,7 +82,7 @@ Content-Length 416
 Via 1.1 vegur
 
 {
-  args {},                                   *Переданные параметры
+  args {},                                   *РџРµСЂРµРґР°РЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
   data , 
   files {}, 
   form {
@@ -91,7 +91,7 @@ Via 1.1 vegur
     error Truernrnrn, 
     foo bar
   }, 
-  headers {                                  *Заголовки
+  headers {                                  *Р—Р°РіРѕР»РѕРІРєРё
     Accept , 
     Connection close, 
     Content-Length 35, 
@@ -100,48 +100,48 @@ Via 1.1 vegur
   }, 
   json null, 
   origin 212.193.78.231,       
-  url httphttpbin.orgpost                    *Адрес запрошенного ресурса
+  url httphttpbin.orgpost                    *РђРґСЂРµСЃ Р·Р°РїСЂРѕС€РµРЅРЅРѕРіРѕ СЂРµСЃСѓСЂСЃР°
 
 }
 
 4) cookiesset
 
-Запрос
+Р—Р°РїСЂРѕСЃ
 open httpbin.org 80
-GET cookiessetcountry=Ru HTTP1.1             *Запрос ресурса cookiesset по протоколу HTTP версии 1.1 с параметрами country=Ru
+GET cookiessetcountry=Ru HTTP1.1             *Р—Р°РїСЂРѕСЃ СЂРµСЃСѓСЂСЃР° cookiesset РїРѕ РїСЂРѕС‚РѕРєРѕР»Сѓ HTTP РІРµСЂСЃРёРё 1.1 СЃ РїР°СЂР°РјРµС‚СЂР°РјРё country=Ru
 Host httpbin.org
 Accept 
 
-Ответ
-HTTP1.1 302 FOUND                            *Код состояния 302 означает, что данные были перемещены
-Connection keep-alive 			     *Поддерживает соединение
-Server gunicorn19.9.0                        *Информация о сервере
+РћС‚РІРµС‚
+HTTP1.1 302 FOUND                            *РљРѕРґ СЃРѕСЃС‚РѕСЏРЅРёСЏ 302 РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ РґР°РЅРЅС‹Рµ Р±С‹Р»Рё РїРµСЂРµРјРµС‰РµРЅС‹
+Connection keep-alive 			               *РџРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃРѕРµРґРёРЅРµРЅРёРµ
+Server gunicorn19.9.0                        *РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃРµСЂРІРµСЂРµ
 Date Thu, 29 Nov 2018 11:24:56 GMT
 Content-Type texthtml; charset=utf-8
 Content-Length 223
-Location cookies                             *Ресурс был временно перемещен по адресу cookies
+Location cookies                             *Р РµСЃСѓСЂСЃ Р±С‹Р» РІСЂРµРјРµРЅРЅРѕ РїРµСЂРµРјРµС‰РµРЅ РїРѕ Р°РґСЂРµСЃСѓ cookies
 Set-Cookie country=Ru; Path=                
 Access-Control-Allow-Origin 
 Access-Control-Allow-Credentials true
 Via 1.1 vegur
 
-!DOCTYPE HTML PUBLIC -W3CDTD HTML 3.2 FinalEN                                    *Получили html разметку
+!DOCTYPE HTML PUBLIC -W3CDTD HTML 3.2 FinalEN                                    *РџРѕР»СѓС‡РёР»Рё html СЂР°Р·РјРµС‚РєСѓ
 titleRedirecting...title
 pYou should be redirected automatically to target URL a href=cookiescookiesa.  If not click the link.
 
 5) cookies
 
-Запрос
+Р—Р°РїСЂРѕСЃ
 open httpbin.org 80
-GET cookies HTTP1.1                          *Запрос ресурса cookies по протоколу HTTP версии 1.1
+GET cookies HTTP1.1                          *Р—Р°РїСЂРѕСЃ СЂРµСЃСѓСЂСЃР° cookies РїРѕ РїСЂРѕС‚РѕРєРѕР»Сѓ HTTP РІРµСЂСЃРёРё 1.1
 Host httpbin.org
 Accept 
 
 
-Ответ
-HTTP1.1 200 OK                               *Код состояния 200 означает, что запрос успешный
-Connection keep-alive                        *Поддерживает соединение
-Server gunicorn19.9.0                        *Информация о сервере
+РћС‚РІРµС‚
+HTTP1.1 200 OK                               *РљРѕРґ СЃРѕСЃС‚РѕСЏРЅРёСЏ 200 РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ Р·Р°РїСЂРѕСЃ СѓСЃРїРµС€РЅС‹Р№
+Connection keep-alive                        *РџРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃРѕРµРґРёРЅРµРЅРёРµ
+Server gunicorn19.9.0                        *РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃРµСЂРІРµСЂРµ
 Date Thu, 29 Nov 2018 11:39:32 GMT
 Content-Type applicationjson 
 Content-Length 20
@@ -150,33 +150,31 @@ Access-Control-Allow-Credentials true
 Via 1.1 vegur
 
 {
-   cookies {}                                *Получили пустые cookies
+   cookies {}                                *РџРѕР»СѓС‡РёР»Рё РїСѓСЃС‚С‹Рµ cookies
                 }
 
 6) redirect
 
-Запрос
+Р—Р°РїСЂРѕСЃ
 open httpbin.org 80
-GET redirect4 HTTP1.1                        *Запрос ресурса redirect4 по протоколу HTTP версии 1.1
+GET redirect4 HTTP1.1                        *Р—Р°РїСЂРѕСЃ СЂРµСЃСѓСЂСЃР° redirect4 РїРѕ РїСЂРѕС‚РѕРєРѕР»Сѓ HTTP РІРµСЂСЃРёРё 1.1
 Host httpbin.org
 Accept 
 
 
-Ответ
-HTTP1.1 302 FOUND                            *Код состояния 302 означает, что данные были перемещены
-Connection keep-alive                        *Поддерживает соединение
-Server gunicorn19.9.0                        *Информация о сервере
+РћС‚РІРµС‚
+HTTP1.1 302 FOUND                            *РљРѕРґ СЃРѕСЃС‚РѕСЏРЅРёСЏ 302 РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ РґР°РЅРЅС‹Рµ Р±С‹Р»Рё РїРµСЂРµРјРµС‰РµРЅС‹
+Connection keep-alive                        *РџРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃРѕРµРґРёРЅРµРЅРёРµ
+Server gunicorn19.9.0                        *РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃРµСЂРІРµСЂРµ
 Date Thu, 29 Nov 2018 11:44:06 GMT
 Content-Type texthtml; charset=utf-8
 Content-Length 247
-Location relative-redirect3                  *Ресурс был временно перемещен по адресу relative-redirect3
+Location relative-redirect3                  *Р РµСЃСѓСЂСЃ Р±С‹Р» РІСЂРµРјРµРЅРЅРѕ РїРµСЂРµРјРµС‰РµРЅ РїРѕ Р°РґСЂРµСЃСѓ relative-redirect3
 Access-Control-Allow-Origin 
 Access-Control-Allow-Credentials true
 Via 1.1 vegur
 
-!DOCTYPE HTML PUBLIC -W3CDTD HTML 3.2 FinalEN                        *Получили html разметку
+!DOCTYPE HTML PUBLIC -W3CDTD HTML 3.2 FinalEN                        *РџРѕР»СѓС‡РёР»Рё html СЂР°Р·РјРµС‚РєСѓ
 titleRedirecting...title
 h1Redirecting...h1
 pYou should be redirected automatically to target URL a href=relative-redirect3relative-redirect3a.  If not click the link.
-
-
