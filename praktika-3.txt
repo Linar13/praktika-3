@@ -1,0 +1,182 @@
+1) ip
+
+Запрос
+open httpbin.org 80
+GET ip HTTP1.1                  *Запрос ip
+Host httpbin.org
+Accept 
+
+Ответ
+HTTP1.1 200 OK                  *Код состояния 200 означает, что запрос успешный
+Connection keep-alive           *Поддерживает соединение
+Server gunicorn19.9.0           *Информация о сервере
+Date Thu, 29 Nov 2018 10:58:09 GMT
+Content-Type applicationjson
+Content-Length 31 
+Access-Control-Allow-Origin 
+Access-Control-Allow-Credentials true
+Via 1.1 vegur
+
+{
+   origin 212.193.78.231        *В ответе  мой ip адрес
+                           }
+
+2) get 
+
+Запрос
+open httpbin.org 80
+GET getfoo=bar&1=2&20&error=True HTTP1.1       *Запрос ресурса get c параметрами foo=bar и 1=2, и 20, и error=True по протоколу HTTP версии 1.1
+Host httpbin.org
+Accept 
+
+Ответ
+HTTP1.1 200 OK                                 *Код состояния 200 означает, что запрос успешный
+Connection keep-alive 			       *Поддерживает соединение
+Server gunicorn19.9.0                          *Информация о сервере
+Date Thu, 29 Nov 2018 11:04:17 GMT
+Content-Type applicationjson
+Content-Length 281
+Access-Control-Allow-Origin 
+Access-Control-Allow-Credentials true
+Via 1.1 vegur
+
+{
+   args {                                      *Переданные параметры
+             1 2,
+             20 ,
+             error True,
+             foo bar
+            },
+   headers {                                   *Заголовки
+              Accept ,
+              Connection close,
+              Host httpbin.org
+            },
+   origin 212.193.78.231,        
+   url httphttpbin.orggetfoo=bar&1=2&2%2F0&error=True  *Адрес запрошенного ресурса
+}
+
+3) post
+
+Запрос
+open httpbin.org 80
+POST post HTTP1.1                             *Отправить POST запрос ресурсу post по протоколу HTTP1.1
+Host httpbin.org
+Accept 
+Content-Length 35
+Content-Type applicationx-www-form-urlencoded
+
+foo=bar&1=2&2%2F0=&error=True                 *Параметры запроса
+
+Ответ на запрос
+HTTP1.1 200 OK                                *Код состояния 200 означает, что запрос успешный
+Connection keep-alive                         *Поддерживает соединение
+Servergunicorn19.9.0                          *Информация о сервере
+Date Thu, 29 Nov 2018 11:12:06 GMT
+Content-Type applicationjson             
+Access-Control-Allow-Origin 
+Access-Control-Allow-Credentials true
+X-Powered-By Flask
+X-Processed-Time 0.000952959060669
+Content-Length 416
+Via 1.1 vegur
+
+{
+  args {},                                   *Переданные параметры
+  data , 
+  files {}, 
+  form {
+    1 2, 
+    20 , 
+    error Truernrnrn, 
+    foo bar
+  }, 
+  headers {                                  *Заголовки
+    Accept , 
+    Connection close, 
+    Content-Length 35, 
+    Content-Type applicationx-www-form-urlencoded, 
+    Host httpbin.org
+  }, 
+  json null, 
+  origin 212.193.78.231,       
+  url httphttpbin.orgpost                    *Адрес запрошенного ресурса
+
+}
+
+4) cookiesset
+
+Запрос
+open httpbin.org 80
+GET cookiessetcountry=Ru HTTP1.1             *Запрос ресурса cookiesset по протоколу HTTP версии 1.1 с параметрами country=Ru
+Host httpbin.org
+Accept 
+
+Ответ
+HTTP1.1 302 FOUND                            *Код состояния 302 означает, что данные были перемещены
+Connection keep-alive 			     *Поддерживает соединение
+Server gunicorn19.9.0                        *Информация о сервере
+Date Thu, 29 Nov 2018 11:24:56 GMT
+Content-Type texthtml; charset=utf-8
+Content-Length 223
+Location cookies                             *Ресурс был временно перемещен по адресу cookies
+Set-Cookie country=Ru; Path=                
+Access-Control-Allow-Origin 
+Access-Control-Allow-Credentials true
+Via 1.1 vegur
+
+!DOCTYPE HTML PUBLIC -W3CDTD HTML 3.2 FinalEN                                    *Получили html разметку
+titleRedirecting...title
+pYou should be redirected automatically to target URL a href=cookiescookiesa.  If not click the link.
+
+5) cookies
+
+Запрос
+open httpbin.org 80
+GET cookies HTTP1.1                          *Запрос ресурса cookies по протоколу HTTP версии 1.1
+Host httpbin.org
+Accept 
+
+
+Ответ
+HTTP1.1 200 OK                               *Код состояния 200 означает, что запрос успешный
+Connection keep-alive                        *Поддерживает соединение
+Server gunicorn19.9.0                        *Информация о сервере
+Date Thu, 29 Nov 2018 11:39:32 GMT
+Content-Type applicationjson 
+Content-Length 20
+Access-Control-Allow-Origin 
+Access-Control-Allow-Credentials true
+Via 1.1 vegur
+
+{
+   cookies {}                                *Получили пустые cookies
+                }
+
+6) redirect
+
+Запрос
+open httpbin.org 80
+GET redirect4 HTTP1.1                        *Запрос ресурса redirect4 по протоколу HTTP версии 1.1
+Host httpbin.org
+Accept 
+
+
+Ответ
+HTTP1.1 302 FOUND                            *Код состояния 302 означает, что данные были перемещены
+Connection keep-alive                        *Поддерживает соединение
+Server gunicorn19.9.0                        *Информация о сервере
+Date Thu, 29 Nov 2018 11:44:06 GMT
+Content-Type texthtml; charset=utf-8
+Content-Length 247
+Location relative-redirect3                  *Ресурс был временно перемещен по адресу relative-redirect3
+Access-Control-Allow-Origin 
+Access-Control-Allow-Credentials true
+Via 1.1 vegur
+
+!DOCTYPE HTML PUBLIC -W3CDTD HTML 3.2 FinalEN                        *Получили html разметку
+titleRedirecting...title
+h1Redirecting...h1
+pYou should be redirected automatically to target URL a href=relative-redirect3relative-redirect3a.  If not click the link.
+
+
